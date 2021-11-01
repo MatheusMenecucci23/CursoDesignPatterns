@@ -6,20 +6,19 @@ namespace CursoDesignPatterns
     {
         static void Main(string[] args)
         {
-            Imposto iss = new ISS();
-            Imposto icms = new ICMS();
-            Imposto iccc = new ICCC();
+            CalculadorDeDescontos calculador = new CalculadorDeDescontos();
 
-            Orcamento orcamento = new Orcamento(500.0);
+            Orcamento orcamento = new Orcamento(500);
+            orcamento.AdicionaItem(new Item("CANETA", 250));
+            orcamento.AdicionaItem(new Item("LAPIS", 250));
+            orcamento.AdicionaItem(new Item("GELADEIRA", 250));
+            orcamento.AdicionaItem(new Item("FOGAO", 250));
+            orcamento.AdicionaItem(new Item("MICROONDAS", 250));
+            orcamento.AdicionaItem(new Item("XBOX", 250));
 
-            CalculadorDeImpostos calculador = new CalculadorDeImpostos();
 
-            //calculador.RealizaCalculo(orcamento, icms);
-            calculador.RealizaCalculo(orcamento, iss);
-            //calculador.RealizaCalculo(orcamento, iccc);
-
-            iss.Calcula(orcamento);
-
+            double desconto = calculador.Calcula(orcamento);
+            Console.WriteLine(desconto);
 
             Console.ReadKey();
         }
