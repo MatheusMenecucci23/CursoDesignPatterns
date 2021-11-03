@@ -16,6 +16,7 @@ namespace CursoDesignPatterns
             {
                 return orcamento.Valor * 0.07;
             }
+            //chamando o próximo que o d3 que é o método sem desconto
             return Proximo.Desconta(orcamento);
         }
     }

@@ -15,6 +15,7 @@ namespace CursoDesignPatterns
             {
                 return orcamento.Valor * 0.1;
             }
+            //chamando o proxímo que é o D2 = new DescontoProMaisDeQuinhentosReais();
             return Proximo.Desconta(orcamento);
         }
     }
