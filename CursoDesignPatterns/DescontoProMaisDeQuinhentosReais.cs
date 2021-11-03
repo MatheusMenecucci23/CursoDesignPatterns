@@ -16,6 +16,10 @@ namespace CursoDesignPatterns
             {
                 return orcamento.Valor * 0.07;
             }
+            Console.WriteLine(Proximo.Desconta(orcamento));
+
+            //linkando o próximo método a ser chamado
+            //próximo é o d3
             return Proximo.Desconta(orcamento);
         }
     }

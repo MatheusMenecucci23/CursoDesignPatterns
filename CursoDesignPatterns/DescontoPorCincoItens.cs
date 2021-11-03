@@ -11,10 +11,12 @@ namespace CursoDesignPatterns
         public Desconto Proximo {get;set;}
         public double Desconta(Orcamento orcamento)
         {
-            if (orcamento.itens.Count > 5)
+            if (orcamento.Itens.Count > 5)
             {
                 return orcamento.Valor * 0.1;
             }
+            Console.WriteLine(Proximo.Desconta(orcamento));
+            //próximo é o d2
             return Proximo.Desconta(orcamento);
         }
     }
