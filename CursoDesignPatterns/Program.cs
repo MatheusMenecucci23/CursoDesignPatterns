@@ -7,7 +7,7 @@ namespace CursoDesignPatterns
         static void Main(string[] args)
         {
             //calculando imposto conjugado
-            Imposto iss = new ISS(new ICMS());
+            Imposto iss = new ICPP(new ISS());
             
 
             Orcamento orcamento = new Orcamento(500.0);

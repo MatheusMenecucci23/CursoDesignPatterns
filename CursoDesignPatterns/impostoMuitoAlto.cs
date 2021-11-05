@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace CursoDesignPatterns
 {
-    public class ICMS : Imposto
+    class impostoMuitoAlto : Imposto
     {
         //para o outro imposto funcionar
-        public ICMS(Imposto outroImposto) : base(outroImposto) { }
-        public ICMS() : base() { }
+        public impostoMuitoAlto(Imposto outroImposto) : base(outroImposto) { }
+        public impostoMuitoAlto() : base() { }
 
         //
         public override double Calcula(Orcamento orcamento)
         {
-            return orcamento.Valor * 0.1 + CalculoDoOutroImposto(orcamento);
+            return orcamento.Valor * 0.2 + CalculoDoOutroImposto(orcamento);
         }
     }
 }

@@ -10,6 +10,7 @@ namespace CursoDesignPatterns
     {
         public Imposto OutroImposto { get; set; }
 
+        //passando o outro imposto no construtor
         public Imposto(Imposto outroImposto)
         {
             this.OutroImposto = outroImposto;
