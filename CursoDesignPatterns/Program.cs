@@ -6,20 +6,20 @@ namespace CursoDesignPatterns
     {
         static void Main(string[] args)
         {
-            CalculadorDeDescontos calculador = new CalculadorDeDescontos();
-
-            Orcamento orcamento = new Orcamento(500);
-            orcamento.AdicionaItem(new Item("CANETA", 250));
-            orcamento.AdicionaItem(new Item("LAPIS", 250));
-            orcamento.AdicionaItem(new Item("GELADEIRA", 250));
-            orcamento.AdicionaItem(new Item("FOGAO", 250));
-            orcamento.AdicionaItem(new Item("MICROONDAS", 250));
-            orcamento.AdicionaItem(new Item("XBOX", 250));
+            NotaFiscalBuilder criador = new NotaFiscalBuilder();
+            criador
+                .ParaEmpresa("Caelum Ensino e Inovacao")
+                .Com("23.456.789/00101-12")
+                .Com(new ItemDaNota("item 1",100.0))
+                .Com(new ItemDaNota("item 2",200.0))
+                .ComObservacoes("uma obs qualquer");
 
 
-            double desconto = calculador.Calcula(orcamento);
-            Console.WriteLine(desconto);
+            NotaFiscal nf = criador.Constroi();
 
+
+            Console.WriteLine(nf.ValorBruto);
+            Console.WriteLine(nf.Impostos);
             Console.ReadKey();
         }
     }
