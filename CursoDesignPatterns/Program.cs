@@ -14,6 +14,10 @@ namespace CursoDesignPatterns
                 .Com(new ItemDaNota("item 2",200.0))
                 .ComObservacoes("uma obs qualquer");
 
+            criador.AdicionaAcao(new EnviadorDeEmail());
+            criador.AdicionaAcao(new NotaFiscalDao());
+            criador.AdicionaAcao(new EnviadorDeSms());
+            criador.AdicionaAcao(new Multiplicador(2));
 
             NotaFiscal nf = criador.Constroi();
 
