@@ -50,9 +50,12 @@
     <Compile Include="Cap2\La.cs" />
     <Compile Include="Cap2\Mi.cs" />
     <Compile Include="Cap2\NotasMusicais.cs" />
+    <Compile Include="Cap2\Piano.cs" />
     <Compile Include="Cap2\Re.cs" />
     <Compile Include="Cap2\Si.cs" />
     <Compile Include="Cap2\Sol.cs" />
+    <Compile Include="Cap3\Contrato.cs" />
+    <Compile Include="Cap3\TipoContrato.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
