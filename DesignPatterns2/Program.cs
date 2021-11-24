@@ -1,5 +1,7 @@
 ﻿using DesignPatterns2.Cap3;
+using DesignPatterns2.Cap4;
 using System;
+using System.Linq.Expressions;
 
 namespace DesignPatterns2
 {
@@ -7,26 +9,20 @@ namespace DesignPatterns2
     {
         static void Main(string[] args)
         {
-            Historico historico = new Historico();
+            IExpressao esquerda = new Soma(new Numero(1), new Numero(10));
+            IExpressao direita = new Substracao(new Numero(20), new Numero(10));
+            IExpressao soma = new Soma(esquerda, direita);
 
-            Contrato c = new Contrato(DateTime.Now, "victor", TipoContrato.Novo);
-            historico.Adiciona(c.SalvaEstado());
-            Console.WriteLine(c.Tipo);
+            Console.WriteLine(soma.Avalia());
 
-            c.Avanca();
-            historico.Adiciona(c.SalvaEstado());
-            Console.WriteLine(c.Tipo);
-            
-            c.Retrocede();
-            historico.Adiciona(c.SalvaEstado());
-            Console.WriteLine(c.Tipo);
+            Expression soma1 = Expression.Add(Expression.Constant(10),Expression.Constant(100));
 
-            c.Avanca();
-            historico.Adiciona(c.SalvaEstado());
-            Console.WriteLine(c.Tipo);
+            Func<int> funcao = Expression.Lambda<Func<int>>(soma1).Compile();
+            Console.WriteLine(funcao());
 
+            IExpressao raizQuadrada = new RaizQuadrada(new Numero(100));
+            Console.WriteLine(raizQuadrada.Avalia());
 
-            Console.WriteLine(historico.Pega(2).Contrato.Tipo);
             Console.ReadKey();
         }
     }
