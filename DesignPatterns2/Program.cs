@@ -7,8 +7,11 @@ namespace DesignPatterns2
     {
         static void Main(string[] args)
         {
-            MensagemPorEmail mensagem = new MensagemPorEmail("victor");
+            IMensagem mensagem = new MensagemParaAdministrativa("victor");
+            IEnviador enviador = new EnviaPorEmail();
+            mensagem.Enviador = enviador;
             mensagem.Envia();
+      
             Console.ReadKey();
         }
     }

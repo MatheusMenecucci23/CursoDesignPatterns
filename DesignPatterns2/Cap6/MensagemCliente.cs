@@ -6,19 +6,24 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns2.Cap6
 {
-    class MensagemPorEmail
+    class MensagemCliente : IMensagem
     {
-        public MensagemPorEmail(string nome)
+        public MensagemCliente(string nome)
         {
             this.Nome = nome;
         }
 
         public object Nome { get; }
+        public IEnviador Enviador { get; set; }
 
         public void Envia()
         {
-            Console.WriteLine("Enviando a mensagem por Email");
-            Console.WriteLine($"Mensagem para o cliente {Nome}");
+            Enviador.Envia(this);
+        }
+
+        public string Formata()
+        {
+            return String.Format($"Mensagem para o cliente {Nome}");
         }
     }
 }
