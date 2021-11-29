@@ -1,4 +1,6 @@
-﻿namespace DesignPatterns2.Cap4
+﻿using DesignPatterns2.Cap5;
+
+namespace DesignPatterns2.Cap4
 {
     class Soma : IExpressao
     {
@@ -15,6 +17,10 @@
             int valorEsquerda = Esquerda.Avalia();
             int valorDireita = Direita.Avalia();
             return valorEsquerda + valorDireita;
+        }
+        public void Aceita(Impressora impressora)
+        {
+            impressora.ImprimeSoma(this);
         }
     }
 }

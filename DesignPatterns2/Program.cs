@@ -1,5 +1,6 @@
 ﻿using DesignPatterns2.Cap3;
 using DesignPatterns2.Cap4;
+using DesignPatterns2.Cap5;
 using System;
 using System.Linq.Expressions;
 
@@ -15,14 +16,8 @@ namespace DesignPatterns2
 
             Console.WriteLine(soma.Avalia());
 
-            Expression soma1 = Expression.Add(Expression.Constant(10),Expression.Constant(100));
-
-            Func<int> funcao = Expression.Lambda<Func<int>>(soma1).Compile();
-            Console.WriteLine(funcao());
-
-            IExpressao raizQuadrada = new RaizQuadrada(new Numero(100));
-            Console.WriteLine(raizQuadrada.Avalia());
-
+            Impressora impressora = new Impressora();
+            soma.Aceita(impressora);
             Console.ReadKey();
         }
     }
