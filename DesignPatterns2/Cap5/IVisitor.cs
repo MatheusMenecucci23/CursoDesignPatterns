@@ -5,7 +5,7 @@ namespace DesignPatterns2.Cap5
     interface IVisitor
     {
         void ImprimeSoma(Soma soma);
-        void ImprimeSubstracao(Subtracao subtracao);
+        void ImprimeSubtracao(Subtracao subtracao);
 
         void ImprimeNumero(Numero numero);
     }

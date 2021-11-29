@@ -25,7 +25,7 @@ namespace DesignPatterns2.Cap5
             Console.Write(numero.Valor);
         }
 
-        public void ImprimeSubstracao(Subtracao subtracao)
+        public void ImprimeSubtracao(Subtracao subtracao)
         {
             Console.Write("(");
             subtracao.Esquerda.Aceita(this);
