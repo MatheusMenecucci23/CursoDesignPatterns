@@ -65,8 +65,7 @@
     <Compile Include="Cap4\Multiplicacao.cs" />
     <Compile Include="Cap4\RaizQuadrada.cs" />
     <Compile Include="Cap4\Subtracao.cs" />
-    <Compile Include="Cap5\Impressora.cs" />
-    <Compile Include="Cap5\IVisitor.cs" />
+    <Compile Include="Cap6\MensagemPorEmail.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

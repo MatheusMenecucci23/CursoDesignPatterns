@@ -13,7 +13,7 @@ namespace DesignPatterns2.Cap1
         public IDbConnection GetConnection()
         {
             IDbConnection conexao = new SqlConnection();
-            conexao.ConnectionString = "User Id = root;Password=;Server=localhost;Database=meuBanco"
+            conexao.ConnectionString = "User Id = root;Password=;Server=localhost;Database=meuBanco";
             conexao.Open();
 
             return conexao;
